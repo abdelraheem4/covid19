@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Number Of Vaccine/th>
+        <th scope="col">Vaccine Name</th>
+        <th scope="col">Center Name</th>
+        <th scope="col">First Date Dose</th>
+        <th scope="col">Second Date Dose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of vaccineReport.vaccineCertifcate">
+        <td>{{obj.fullname}}</td>
+        <td>{{obj.numberofvaccine}}</td>
+        <td>{{obj.vaccinename}}</td>
+        <td>{{obj.centername}}</td>
+        <td>{{obj.firstdatedose}}</td>
+        <td>{{obj.seconddatedose}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
