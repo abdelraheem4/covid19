@@ -14,11 +14,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
+import { CenterComponent } from './center/center.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    CenterComponent,
   ],
   imports: [
     BrowserModule,

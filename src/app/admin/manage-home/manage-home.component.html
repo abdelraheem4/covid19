@@ -6,6 +6,7 @@
    </div> 
     <button type="submit" (click)="search()" class="btn btn-success">Search</button>
    </form>-->
+   <main class="content">
    <div>
  <button style=" margin-top: 20%;" (click)="openCreateDialog()">Create New</button>
   <table class="table" style="width:5%; ">
@@ -194,7 +195,7 @@
           
            </form>
       </mat-dialog-content>
-      <mat-dialog-actions align="end">
+      <mat-dialog-actions >
         <button mat-button mat-dialog-close>Cancel</button>
         <button mat-button (click)="saveData()" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
       </mat-dialog-actions>
@@ -365,3 +366,4 @@
         <button mat-dialog-close="yes">YES</button>
         <button mat-dialog-close="no">NO</button>
         </ng-template>
+      </main>

@@ -1,0 +1,30 @@
+<app-header></app-header>
+        <div class="hero-v1">
+            <div class="container">
+                <div 
+                  #mapContainer id="map">
+              </div>
+            </div>
+           
+                
+            </div>
+          
+         
+   <div class="content">
+      <div *ngFor="let obj of home.allVacciniationCentre" class="card">
+            <div  class="icon"><i class="material-symbols-outlined">medical_services</i></div>
+            <p class="title">{{obj.centername}}</p>
+            <p class="text">{{obj.centeraddres}}</p>
+          </div>
+    </div>
+
+
+
+   <div class="payment" style="display:inline-block ;">
+    <label class="payment_text">Donate 5$</label>
+    <div id="payments"></div>
+   </div>
+
+    
+
+
