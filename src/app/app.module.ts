@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
 import { CenterComponent } from './center/center.component';
+import { TokenInterceptor } from 'src/Interceptor/token.Interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,12 @@ import { CenterComponent } from './center/center.component';
     MatButtonModule,
     MatDialogModule,
   ],
-  providers: [ ],
+  exports: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

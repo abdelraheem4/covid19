@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { render } from 'creditcardpayments/creditCardPayments';
 import { ToastrService } from 'ngx-toastr';
@@ -10,7 +11,11 @@ import { VaccinesService } from '../Services/vaccines.service';
   styleUrls: ['./center.component.css']
 })
 export class CenterComponent implements AfterViewInit  {
-  constructor(public vaccines:VaccinesService,public home:HomeService,private toastr:ToastrService) {
+  result:any;
+  adress:any;
+
+  constructor(public vaccines:VaccinesService,public home:HomeService,private toastr:ToastrService,private http:HttpClient) {
+
     render(
       {
           id: "#payments",
@@ -23,11 +28,27 @@ export class CenterComponent implements AfterViewInit  {
           }
         }
       );
-   }
 
+   }
+   CenterAdress(){
+    return this.http.get("https://localhost:44352/api/VaccinationCenter").toPromise().then((data)=>{
+      return data
+    })
+  }
    
   ngOnInit(): void {
     this.home.getAllVacciniationCentre();
+
+    this.CenterAdress().then((res)=>{
+      this.result=res;
+      console.log(this.result)
+  
+      this.adress=this.result.map((coin:any)=>coin.centeraddres);
+      console.log(this.adress)
+  
+  
+  
+    })
   }
 
 
@@ -81,6 +102,7 @@ export class CenterComponent implements AfterViewInit  {
    ngAfterViewInit() {
      this.mapInitializer();
    }
+   
  
    mapInitializer() {
      this.map = new google.maps.Map(this.gmap.nativeElement, 
@@ -120,9 +142,9 @@ export class CenterComponent implements AfterViewInit  {
    });
  
  }
- 
-   
- }
+
+
+}
  
  
  
