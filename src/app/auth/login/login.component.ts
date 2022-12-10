@@ -20,10 +20,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   submit(){
-    // debugger;
-     this.auth.submit(this.username,this.password);
-     console.log('hello from login ');
-   }
+      this.auth.submit(this.username,this.password);
+    }
    
    goToregister(){
     this.router.navigate(['security/register'])
