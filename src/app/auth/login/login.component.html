@@ -51,10 +51,11 @@ background-size: cover; ">
 </div>
 
        
-<div class="d-grid"> <button (click)="submit()" class="btn btn-gray-800" [disabled]="!username.valid||!password.valid" >Login</button></div>
 
    
       </form>
+      <div class="d-grid"> <button (click)="submit()" class="btn btn-gray-800" [disabled]="!username.valid||!password.valid" >Login</button></div>
+
       <span class="fw-normal" >Not registered? <a (click)=" goToregister()"  class="fw-bold">Create account</a></span> 
     </div>
   </div>
