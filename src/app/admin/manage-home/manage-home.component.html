@@ -7,10 +7,21 @@
     <button type="submit" (click)="search()" class="btn btn-success">Search</button>
    </form>-->
    <main class="content">
-   <div>
- <button style=" margin-top: 20%;" (click)="openCreateDialog()">Create New</button>
-  <table class="table" style="width:5%; ">
-     
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <br><br>
+                    <h1 style="font-family: serif; margin-left:45% ;">Manage Home </h1>
+                    <br><br>  
+                    <button style="background-color: #797979;"(click)="openCreateDialog()">Create New</button>
+  <div>
+ <br>
+ <div class="card border-0 shadow mb-4">
+<div class="card-body">
+<div class="table-responsive">
+  <table class="table  form-inline"  >
+
       <thead>
         <tr>
           <th scope="col">imageLogo</th><th scope="col">littleTitle1</th>
@@ -40,9 +51,10 @@
             <th scope="col"><img src="../../../assets/images/{{obj.newsimage3}}"></th>
             <th scope="col">{{obj.newsdesc1}}</th> <th scope="col">{{obj.newsdesc2}}</th>
             <th scope="col">{{obj.newsdesc3}}</th>
-          <td>
-            <button (click)="openUpdateDialog(obj)">Update</button>
-            <button  (click)="openDeleteDialog(obj.homeid)">Delete</button></td>
+          
+            <button (click)="openUpdateDialog(obj)" style="background-color: #797979; margin-right:10%; " >Update</button>
+            <br><br>
+            <button  (click)="openDeleteDialog(obj.homeid)" style="background-color: #797979; " >Delete</button> 
         </tr>
           </tbody>
     </table>
@@ -366,4 +378,4 @@
         <button mat-dialog-close="yes">YES</button>
         <button mat-dialog-close="no">NO</button>
         </ng-template>
-      </main>
+       
