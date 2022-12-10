@@ -74,14 +74,17 @@
 </header> -->
 
 <app-sidebar></app-sidebar>
+
 <main class="content">
 <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
         <div class="pcoded-content">
             <div class="pcoded-inner-content">
-
-                
-<button (click)="opendialog()">Create New</button>
+                <br><br>
+                <h1 style="font-family: serif; margin-left:45% ;">Manage User</h1>
+                <br><br>
+<button (click)="opendialog()" style="background-color: #797979;">Create New</button>
+<br><br>
 <table  class="table table-striped">
     <thead>
       <tr>
@@ -116,17 +119,16 @@
         <td>{{obj.age}}</td>
         <!-- <td>{{obj.roleid}}</td> -->
         <td><img src="../../../assets/images/{{obj.image}}" width="100" height="100">
-        </td>
-        
-        <td>
-        <button (click)="openUpdateDailog(obj)">Update</button>
-         <button (click)="openDeleteDailog(obj.userid)">Delete</button> 
-
-        </td>
-
-
-      </tr>
+        </td>       
+    
+ </tr>
       
+<br>
+ <div>
+ <button (click)="openUpdateDailog(obj)"  style="background-color: #797979; margin-right:10%; " > Update</button>
+ 
+ <button (click)="openDeleteDailog(obj.userid)"  style="background-color: #797979; margin-right:10%;  "> Delete</button> 
+</div>
     </tbody>
   </table>
 
