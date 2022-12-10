@@ -1,19 +1,14 @@
 <app-sidebar></app-sidebar>
 
 <main class="content">
-  <div class="pcoded-main-container">
-      <div class="pcoded-wrapper">
-          <div class="pcoded-content">
-              <div class="pcoded-inner-content">
-                  <br><br>
-                  <h1 style="font-family: serif; margin-left:45% ;">Manage Reservation</h1>
-                  
-<table tyle="display:inline-block ;">
-  
-    <div  class="table">
-      <button (click)="openCreateDialog()" style="background-color: #797979;"> Creat new</button>
-      <br><br>
-<form class="form-inline" >
+<div class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+      <div class="pcoded-content">
+          <div class="pcoded-inner-content">
+              
+   <h1 style="font-family: serif; margin-left:45% ;">Manage Reservation</h1>
+   
+<form class="form-inline content" style="margin-left: 30%;" >
   <legend style="font-family: Fantasy	;">First Dose</legend>
 
   <div class="form-group mb-2">
@@ -24,12 +19,13 @@
   <label for="second">To</label>
   <input type="date"  (change)="searchInputToFirst($event)" [value]="datetoFirst" name="second"><br>
   </div>
-  <div> 
-     <button (click)="SearchBetweenFirstDose()" >Search</button>
-  </div>
+   
+      <button type="submit"
+  type="button" class="btn btn-outline-danger"  
+       (click)="SearchBetweenSecondDose()">Search</button>
 </form>
 <br><br>
-<form  class="form-inline" >
+<form  class="form-inline content" style="margin-left: 30%;" >
   <legend style="font-family: Fantasy	;">Second Dose</legend>
   <div class="form-group mb-2">
   <label for="first">From</label>
@@ -39,48 +35,41 @@
   <label for="second">To</label>
   <input type="date"  (change)="searchInputToSecond($event)" [value]="datetoSecond" name="second"><br>
   </div>
-<div>
-  <button (click)="SearchBetweenSecondDose()" >Search</button>
-</div>
+   
+      <button type="submit"
+  type="button" class="btn btn-outline-danger"  
+       (click)="SearchBetweenSecondDose()">Search</button>
 </form>
-
-<table class=" table-bordered bg-danger">
-  <tr>
+<br><br>  
+<button (click)="openCreateDialog()" class="table-active"> Creat new</button>
+<br>
+<br>
+<div class="card border-0 shadow mb-4 " >
+  <div class="card-body">
+      <div class="table-responsive">
+<table class="table table-centered  table-nowrap  rounded" style="margin-left: 20%;">
+  <thead class="table-danger">
+      <tr>
     <th scope="col">
       First Dose date
-
     </th>
     <th scope="col">
       Secound Dose date
     </th>
+    <th></th>
   </tr>
-    
-  
-  <div *ngFor="let obj of reservation.reservation" class="row">
-        
-    <div class="cell" data-title="Name">
-        {{obj.actualdatedose1}}
-            </div>
-    <div class="cell" data-title="Age">
-        {{obj.actualdatedose2}}
-        
-    </div>
-   
-    <div class="cell" data-title="Location">
-        {{obj.Id}}    
-          </div>
-        
-          <button (click)="openUpdateDailog(obj)"  style="background-color: #797979; margin-right:10%; ">Update</button>
-          <button (click)="openDelteDailog(obj.Id)"  style="background-color: #797979; margin-right:10%; ">Delete</button>
-  </div>
+  </thead>
+
+  <tbody *ngFor="let obj of reservation.reservation" >
+    <tr>
+      <td>{{obj.actualdatedose1}}</td>
+      <td>{{obj.actualdatedose2}}</td>
+      <td> {{obj.Id}} </td>  
+          <button (click)="openUpdateDailog(obj)"  class="table-active">Update</button>
+          <button (click)="openDelteDailog(obj.Id)" class="table-active">Delete</button>
+        </tr>
+  </tbody>
 </table>
-
-      
-      
-    </div>
-  </table>
-
-
 
 <ng-template #callUpdateDailog>
   <h2 mat-dialog-title>update reservation </h2>

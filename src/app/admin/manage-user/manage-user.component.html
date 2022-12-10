@@ -83,10 +83,14 @@
                 <br><br>
                 <h1 style="font-family: serif; margin-left:45% ;">Manage User</h1>
                 <br><br>
-<button (click)="opendialog()" style="background-color: #797979;">Create New</button>
+<button (click)="opendialog()" class="table-active">Create New</button>
 <br><br>
-<table  class="table table-striped">
-    <thead>
+
+<div class="card border-0 shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+<table class="table table-centered table-nowrap mb-0 rounded">
+    <thead class="table-danger">
       <tr>
          <th scope="col"> Name</th>
         <th scope="col">user Name</th>
@@ -98,9 +102,6 @@
         <th scope="col">Age</th>
         <!-- <th scope="col">Role ID</th> -->
         <th scope="col">Image</th>
-
-
-
       </tr>
     </thead>
     <tbody *ngFor="let obj of user.User">
@@ -117,9 +118,12 @@
         <td>{{obj.age}}</td>
         <!-- <td>{{obj.roleid}}</td> -->
         <td><img src="../../../assets/images/{{obj.image}}" width="100" height="100"> </td>       
-        <button (click)="openUpdateDailog(obj)"  style="background-color: #797979; margin-right:10%; " > Update</button>
-        <button (click)="openDeleteDailog(obj.userid)" style="background-color: #797979;    "> Delete</button> 
-        
+
+        <div>
+            <button (click)="openUpdateDailog(obj)"  style=" margin-right:10%; "class="table-active" > Update</button>
+            <br><br>
+            <button (click)="openDeleteDailog(obj.userid)"  style="  margin-right:10%; "  class="table-active"> Delete</button> 
+            </div>
  </tr>
       
 <br>
@@ -240,4 +244,4 @@
     <button mat-dialog-close="no" >NO</button>
     
       </ng-template>
-    </main>
+    

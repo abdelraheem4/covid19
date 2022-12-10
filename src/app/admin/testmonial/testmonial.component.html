@@ -16,11 +16,14 @@
                     <h1 style="font-family: serif; margin-left:45% ;">Manage Testimonial</h1>
                     <br><br>
    <div>
-    <button style="margin-left: 30%; background-color: #797979;" (click)="openCreateDialog()">Create New</button>
+    <button   class="table-active" (click)="openCreateDialog()">Create New</button>
 <br><br>
-     <table class="table" style="width: 50%; margin-left: 30%;">
 
-         <thead>
+<div class="card border-0 shadow mb-4">
+  <div class="card-body">
+      <div class="table-responsive">
+<table class="table table-centered table-nowrap mb-0 rounded">
+  <thead class="table-danger">
            <tr>
              <th scope="col">Message</th>
              <th scope="col">UserId</th>
@@ -31,8 +34,8 @@
              <td>{{obj.message}}</td>
              <td>{{obj.userid}}</td>
               
-               <button (click)="openUpdateDialog(obj)"  style="background-color: #797979; margin-right:10% ;"  >Update</button>
-               <button  (click)="openDeleteDialog(obj.idtest)" style="background-color: #797979;">Delete</button> 
+               <button (click)="openUpdateDialog(obj)"  class="table-active"   >Update</button>
+               <button  (click)="openDeleteDialog(obj.idtest)"  class="table-active">Delete</button> 
            </tr>
              </tbody>
        </table>

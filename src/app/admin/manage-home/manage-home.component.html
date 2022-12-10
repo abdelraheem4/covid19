@@ -14,15 +14,15 @@
                     <br><br>
                     <h1 style="font-family: serif; margin-left:45% ;">Manage Home </h1>
                     <br><br>  
-                    <button style="background-color: #797979;"(click)="openCreateDialog()">Create New</button>
+                    <button  class="table-active"(click)="openCreateDialog()">Create New</button>
   <div>
  <br>
- <div class="card border-0 shadow mb-4">
-<div class="card-body">
-<div class="table-responsive">
-  <table class="table  form-inline"  >
 
-      <thead>
+ <div class="card border-0 shadow mb-4">
+  <div class="card-body">
+      <div class="table-responsive">
+<table class="table table-centered table-nowrap mb-0 rounded">
+      <thead class="table-danger">
         <tr>
           <th scope="col">imageLogo</th><th scope="col">littleTitle1</th>
           <th scope="col">Title1</th><th scope="col">Title1</th>
@@ -34,12 +34,13 @@
           <th scope="col">newsImage2</th><th scope="col">newsImage3</th>
           <th scope="col">newsdesc1</th> <th scope="col">newsdesc2</th>
           <th scope="col">newsdesc3</th>
-        </tr>
+         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let obj of home.allHome">
-            <th scope="col"><img src="../../../assets/images/{{obj.imagelogo}}" alt=""> </th><th scope="col">{{obj.littletitle1}}</th>
-            <td scope="col">{{obj.title1}}</td>
+            <th scope="col"><img src="../../../assets/images/{{obj.imagelogo}}" alt=""> </th>
+            <th scope="col">{{obj.littletitle1}}</th>
+            <th scope="col">{{obj.title1}}</th>
             <th scope="col">{{obj.descriptiontitle1}}</th><th scope="col">{{obj.imagetitle1}}</th>
             <th scope="col">{{obj.textbutton}}</th>
             <th scope="col"><img src="../../../assets/images/{{obj.statisticstitle}}"></th>
@@ -51,10 +52,11 @@
             <th scope="col"><img src="../../../assets/images/{{obj.newsimage3}}"></th>
             <th scope="col">{{obj.newsdesc1}}</th> <th scope="col">{{obj.newsdesc2}}</th>
             <th scope="col">{{obj.newsdesc3}}</th>
+            <th scope="col"></th>
+            <th>  <button (click)="openUpdateDialog(obj)"  class="table-active" >Update</button>
+            <button  (click)="openDeleteDialog(obj.homeid)"  class="table-active" >Delete</button> 
+          </th>
           
-            <button (click)="openUpdateDialog(obj)" style="background-color: #797979; margin-right:10%; " >Update</button>
-            <br><br>
-            <button  (click)="openDeleteDialog(obj.homeid)" style="background-color: #797979; " >Delete</button> 
         </tr>
           </tbody>
     </table>
