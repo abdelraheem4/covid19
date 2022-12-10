@@ -25,8 +25,6 @@ export class DashboardComponent {
   numberpositive:any;
   numberdeath:any;
   chart:any=[];
-  private baseUrl  ='https://api.covidtracking.com/v1/us/daily.json'
-  private proxyUrl ='https://cors-anywhere.herokuapp.com/'
 
   constructor(private http:HttpClient,private router:Router,public home:HomeService,public user:UserService,private dialog:MatDialog) {
     this.user.getALLUser();
@@ -36,7 +34,6 @@ export class DashboardComponent {
   }
 
   covidData(){
-    const url = `${this.proxyUrl}${this.baseUrl}`
     return this.http.get("https://api.covidtracking.com/v1/us/daily.json").toPromise().then((data)=>{
       return data
     })
@@ -59,7 +56,7 @@ export class DashboardComponent {
         data: {
           labels:this.dateee,
             datasets: [{
-                label: 'Current centers',
+                label: 'Positive COVID-19',
                 data: this.numberpositive,
                 backgroundColor: "rgb(115 185 243 / 65%)",
                 borderColor: "#007ee7",
