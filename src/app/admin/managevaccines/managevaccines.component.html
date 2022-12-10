@@ -1,17 +1,28 @@
 <app-sidebar></app-sidebar>
+<main class="content">
+  <div class="pcoded-main-container">
+      <div class="pcoded-wrapper">
+          <div class="pcoded-content">
+              <div class="pcoded-inner-content">
+                  <br><br>
+                  <h1 style="font-family: serif; margin-left:45% ;">Manage Vaccine</h1>
 
 <table tyle="display:inline-block ;">
+
     <div    class="table">
+      <button (click)="openCreateDialog()" style="background-color: #797979; "
+      >Create</button>
+
       <form class="form-inline" style="margin-top: 3%;">
             <div class="form-group mx-sm-3 mb-2">
-            <label for="inputText" class="sr-`only">Course Price</label>
+            <label for="inputText" class="sr-`only" style="font-family: Fantasy	;">Course Price</label>
             <input  type="text" class="form-control" id="inputText" placeholder="Vaccine Name" [value]="name" (change)="inputValue($event)" (click)="search()" >
             </div>
             <button type="submit"
-            class="btn btn-success"
+           style="background-color: #797979;"
             (click)="search()">Search</button>
             </form>
-      <div class="row header">
+      <div class="table-striped table-active">
         <div class="cell">
           Name
         </div>
@@ -27,7 +38,6 @@
           total 
         </div>
    
-        <button (click)="openCreateDialog()">Create</button>
 
       </div>
       
@@ -41,11 +51,16 @@
         <div class="cell" data-title="Occupation">
             {{obj.vaccineexp}}        </div>
         <div class="cell" data-title="Location">
-            {{obj.vaccineid}}        </div>
-           
+            {{obj.vaccineid}}        
+          </div>
+           <br><br><br>
 
-            <button (click)="openUpdateDailog(obj)">update</button>
-            <button (click)="openDelteDailog(obj.vaccineid)">delete</button>
+            
+        
+            <button (click)="openUpdateDailog(obj)"  style="background-color: #797979; margin-right:10%; " > Update</button>
+            <br><br>
+            <button (click)="openDelteDailog(obj.vaccineid)"  style="background-color: #797979; margin-right:10%;  "> Delete</button> 
+           
 
       </div>
     </div>
