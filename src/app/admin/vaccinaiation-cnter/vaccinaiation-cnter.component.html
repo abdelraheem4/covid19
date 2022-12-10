@@ -1,5 +1,4 @@
-<p>vaccinaiation-cnter works!</p>
-<app-sidebar></app-sidebar>
+ <app-sidebar></app-sidebar>
 <!--<form class="form-inline" style="margin-top: 3%;">
     <div class="form-group mx-sm-3 mb-2">
    <label for="inputText" class="sr- only">Testmonial Name</label>
@@ -7,7 +6,15 @@
    </div> 
     <button type="submit" (click)="search()" class="btn btn-success">Search</button>
    </form>-->
-  <button (click)="openCreateDialog()">Create New</button>
+   <main class="content">
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <br><br>
+                    <h1 style="font-family: serif; margin-left:45% ;">Manage Vaccine Center</h1>
+                    <br><br>
+  <button (click)="openCreateDialog()" style="background-color: #797979;">Create New</button>
   <table class="table">
       <thead>
         <tr>
@@ -17,20 +24,22 @@
           <th scope="col">CenterAddress</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let obj of home.allVacciniationCentre">
+      <tbody *ngFor="let obj of home.allVacciniationCentre">
+        <tr >
           <td>{{obj.centername}}</td>
           <td>{{obj.centerusercapacity}}</td>
           <td>{{obj.centervaccinecapacity}}</td>
           <td>{{obj.centeraddres}}</td>
-          <td>
-            <button (click)="openUpdateDialog(obj)">Update</button>
-            <button  (click)="openDeleteDialog(obj.centerid)">Delete</button></td>
-        </tr>
+         
+          <button (click)="openUpdateDialog(obj)"  style="background-color: #797979; margin-right:10%; " > Update</button>
+        
+          <button (click)="openDeleteDialog(obj.vaccineid)"  style="background-color: #797979; margin-right:10%;  "> Delete</button> 
+        </tr> 
+       
+           
           </tbody>
     </table>
-  
-  
+   
     <!--Create Form-->
     <ng-template #callCrateTest>
       <h2 mat-dialog-title>Add VacciniationCentre</h2>
@@ -83,7 +92,7 @@
         <button mat-button (click)="saveData()" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
       </mat-dialog-actions>
     </ng-template>
-  
+
   
   
     <!--Update Form-->
@@ -144,5 +153,7 @@
       <ng-template #callDeleteTest>
         <h2>Are You Sure You Want To Delete Yhis Item ?</h2>
         <button mat-dialog-close="yes">YES</button>
+        <br>
         <button mat-dialog-close="no">NO</button>
         </ng-template>
+    

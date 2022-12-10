@@ -1,4 +1,4 @@
-<!-- <app-sidebar></app-sidebar> -->
+<app-sidebar></app-sidebar>
 <!--<form class="form-inline" style="margin-top: 3%;">
     <div class="form-group mx-sm-3 mb-2">
    <label for="inputText" class="sr- only">Testmonial Name</label>
@@ -6,10 +6,20 @@
    </div> 
     <button type="submit" (click)="search()" class="btn btn-success">Search</button>
    </form>-->
+
+   <main class="content">
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <br><br>
+                    <h1 style="font-family: serif; margin-left:45% ;">Manage Testimonial</h1>
+                    <br><br>
    <div>
-    <button style="margin-top: 7%;" (click)="openCreateDialog()">Create New</button>
-     <table class="table" style="width: 50%;">
-        
+    <button style="margin-left: 30%; background-color: #797979;" (click)="openCreateDialog()">Create New</button>
+<br><br>
+     <table class="table" style="width: 50%; margin-left: 30%;">
+
          <thead>
            <tr>
              <th scope="col">Message</th>
@@ -20,9 +30,9 @@
            <tr *ngFor="let obj of home.allTestmonial">
              <td>{{obj.message}}</td>
              <td>{{obj.userid}}</td>
-             <td>
-               <button (click)="openUpdateDialog(obj)">Update</button>
-               <button  (click)="openDeleteDialog(obj.idtest)">Delete</button></td>
+              
+               <button (click)="openUpdateDialog(obj)"  style="background-color: #797979; margin-right:10% ;"  >Update</button>
+               <button  (click)="openDeleteDialog(obj.idtest)" style="background-color: #797979;">Delete</button> 
            </tr>
              </tbody>
        </table>

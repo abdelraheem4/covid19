@@ -1,17 +1,24 @@
-<!-- <app-sidebar></app-sidebar> -->
-
+<app-sidebar></app-sidebar>
+<main class="content">
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <br><br>
+                    <h1 style="font-family: serif; margin-left:45% ;">Manage Doctor</h1>
+                    <br><br>
 <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
         <div class="pcoded-content">
             <div class="pcoded-inner-content">
 
                 
-<button (click)="opendialog()">Create New</button>
+<button (click)="opendialog()" style="background-color: #797979;">Create New</button>
+<br><br>
 <table  class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col"> Name</th>
+         <th scope="col"> Name</th>
         <th scope="col">user Name</th>
         <th scope="col">Phone Number</th>
        
@@ -28,8 +35,7 @@
     </thead>
     <tbody *ngFor="let obj of user.doctor">
       <tr>
-        <th scope="row"></th>
-        
+         
         <td>{{obj.fullname}}</td>
         <td>{{obj.username}}</td>
         <td>{{obj.phonenumber}}</td>
@@ -41,16 +47,14 @@
         <td>{{obj.roleid}}</td>
         <td><img src="../../../assets/images/{{obj.image}}" width="100" height="100">
         </td>
-        
-        <td>
-        <button (click)="openUpdateDailog(obj)">Update</button>
-         <button (click)="openDeleteDailog(obj.userid)">Delete</button> 
-
-        </td>
-
-
+   
       </tr>
-      
+      <br><br>
+      <button (click)="openUpdateDailog(obj)"  style="background-color: #797979; margin-right:10%; ">Update</button>
+      <button (click)="openDeleteDailog(obj.userid)"  style="background-color: #797979; margin-right:10%; ">Delete</button> 
+
+    <br><br><br>
+
     </tbody>
   </table>
 
