@@ -4,6 +4,7 @@ import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 import { AuthorizationGuard } from './authorization.guard';
 import { CenterComponent } from './center/center.component';
+import { DoctorModule } from './doctor/doctor.module';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -24,6 +25,13 @@ const routes: Routes = [
     path:'admin',
     loadChildren:()=>AdminModule,
     canActivate:[AuthorizationGuard]
+
+  },
+  {
+     path:'managedoctor',
+     loadChildren:()=>DoctorModule,
+     canActivate:[AuthorizationGuard]
+
 
   }
 ];
