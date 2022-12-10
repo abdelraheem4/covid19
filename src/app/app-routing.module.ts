@@ -23,17 +23,16 @@ const routes: Routes = [
   },
   {
     path:'admin',
-<<<<<<< HEAD
-    loadChildren:()=>AdminModule
-  },
-  {
-     path:'managedoctor',
-     loadChildren:()=>DoctorModule
-=======
     loadChildren:()=>AdminModule,
     canActivate:[AuthorizationGuard]
 
->>>>>>> 709bd31836be6083adcb2ade1dafe3de0beeccac
+  },
+  {
+     path:'managedoctor',
+     loadChildren:()=>DoctorModule,
+     canActivate:[AuthorizationGuard]
+
+
   }
 ];
 
