@@ -5,7 +5,7 @@
           <div class="pcoded-content">
               <div class="pcoded-inner-content">
                   <br><br>
-                  <h1 style="font-family: serif; margin-left:45% ;">Manage User</h1>
+                  <h1 style="font-family: serif; margin-left:45% ;">Manage About</h1>
                   <br><br>
 <div>
     <button  class="table-active" (click)="openCreateDialog()">Create New</button>
@@ -28,10 +28,14 @@
              <th scope="col">point1desc2</th> <th scope="col">point1desc3</th>
              <th scope="col">point2desc1</th> <th scope="col">point2desc2</th>
              <th scope="col">point2desc3</th> <th scope="col">protectImage</th>
+             <th scope="col"></th>
+             <th scope="col"></th>
+
+ 
            </tr>
          </thead>
-         <tbody>
-           <tr *ngFor="let obj of home.allAbout">
+         <tbody *ngFor="let obj of home.allAbout">
+           <tr >
                <th scope="col">{{obj.littletitle1}}</th><th scope="col">{{obj.title1}}</th>
                <th scope="col">{{obj.descriptiontitle1}}</th>
                <th scope="col"><img src="../../../assets/images/{{obj.imagetitle1}}" alt=""></th>
@@ -48,11 +52,15 @@
                <th scope="col">{{obj.point2desc1}}</th><th scope="col">{{obj.point2desc2}}</th>
                <th scope="col">{{obj.point2desc3}}</th>
                <th scope="col"><img src="../../../assets/images/{{obj.protectimage}}" alt=""></th>
- 
-             <td>
-               <button (click)="openUpdateDialog(obj)">Update</button>
-               <button  (click)="openDeleteDialog(obj.aboutid)">Delete</button></td>
+               <br>
+
+               <th scope="col">
+                  <button (click)="openUpdateDialog(obj)">Update</button>
+                <button  (click)="openDeleteDialog(obj.aboutid)">Delete</button> </th>
+             
+             
            </tr>
+          
              </tbody>
        </table>
      </div>
