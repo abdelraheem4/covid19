@@ -62,7 +62,7 @@ const routes: Routes = [
     
   },
   {
-    path:'update',
+    path:'updateprofile',
     component:UpdateProfileComponent
   },
   

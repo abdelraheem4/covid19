@@ -1,156 +1,30 @@
 <app-sidebar></app-sidebar>
-<!-- <link href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" rel="stylesheet" />
-<nav class="pcoded-navbar">
-    <div class="navbar-wrapper">
-        <div class="navbar-brand header-logo">
-            <a href="/Dashboard/Dashboard" class="b-brand">
-              
-                <span class="b-title">Covid</span>
-                
-               
-               
-            </a>
-            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
-        </div>
-        <div class="navbar-content scroll-div">
-            <ul class="nav pcoded-inner-navbar">
-                <li class="nav-item pcoded-menu-caption">
-                    <label></label>
-                </li>
-                <li class="nav-item">
-                    <a href="/Admin/Index" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
-                </li>
-                <li class="nav-item">
-                    <a routerLink="/admin/user"class="nav-link "><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Users</span></a>
-                </li>
-                <li class="nav-item">
-                    <a  routerLink="/admin/doctor" class="nav-link "><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">Doctor</span></a>
-                </li>
-                
-                
-
-                <li class="nav-item">
-                    <a href="/Contactus/Index" class="nav-link "><span class="pcoded-micon"><i class="feather icon-mail"></i></span><span class="pcoded-mtext"> Contact Us Messages</span></a>
-                </li>
-              
-                <li class="nav-item">
-                    <a href="/Admin/Search" class="nav-link "><span class="pcoded-micon"><i class="feather icon-search"></i></span><span class="pcoded-mtext"> Report</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="/Books/AcceptBook" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-minus"></i></span><span class="pcoded-mtext">Book</span></a>
-                    
-                </li>
-                <li class="nav-item pcoded-hasmenu">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Manage Pages</span></a>
-                    <ul class="pcoded-submenu">
-                        <li class=""><a href="/Mainpages/Index" class="">Home page</a></li>
-                        <li class=""><a href="/Testimonials/Index" class="">Testimonials</a></li>
-                        <li class=""><a href="/Aboutus/Index" class=""> About Us</a></li>
-
-                    </ul>
-                </li>
-               
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<header class="navbar pcoded-header navbar-expand-lg navbar-light">
-    <div class="m-header">
-        <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
-        <a href="/Dashboard/Dashboard" class="b-brand">
-            <div class="b-bg">
-                <i class="feather icon-trending-up"></i>
-            </div>
-            <span class="b-title">Hall Book</span>
-        </a>
-    </div>
-    
-   
-</header> -->
-
-<!-- 
-<div class="pcoded-main-container">
-    <div class="pcoded-wrapper">
-        <div class="pcoded-content">
-            <div class="pcoded-inner-content"> -->
-
-                 <div>
-
-</div>
-
-<!-- 
-<table  class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col"> ID</th>
-        <th scope="col"> Name</th>
-       
-        <th scope="col">Phone Number</th>
-        <th scope="col">Num Vaccines</th>
-       
-        <th scope="col">Email</th>
-       
-        <th scope="col">Age</th>
-       
-        
 
 
-
-      </tr>
-    </thead>
-    <tbody *ngFor="let obj of user.User">
-      <tr>
-        <th scope="row"></th>
-        <td>{{obj.userid}}</td>
-        <td>{{obj.fullname}}</td>
-       
-        <td>{{obj.phonenumber}}</td>
-        <td>{{obj.numberofvaccines}}</td>
-       
-
-        <td>{{obj.email}}</td>
-        
-        <td>{{obj.age}}</td>
-       
-        
-        
-        <td>
-        <button (click)="openUpdateDailog(obj)">Update</button>
-         <button (click)="openDeleteDailog(obj.userid)">Delete</button> 
-         <button>Send Email</button>
-
-        </td>
-
-
-      </tr>
-      
-    </tbody>
-  </table>
-
-              
-            </div>
-        </div>
-    </div>
-</div>   -->
-
-
-
+<main class="content">
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <br><br>
+                    <h1 style="font-family: serif; margin-left:45% ;">Manage Vaccine</h1>
 <div class="card border-0 shadow mb-4">
 <div class="card-body">
-    <form class="form-inline" style="margin-top: 3%;">
+    <form class="form-inline" style="margin-top:2%; margin-left: 30%;">
         <div class="form-group mx-sm-3 mb-2">
-        <label for="inputText" class="sr- only">Sarech User : </label>
+        <label for="inputText" class="sr- only"  >Sarech User : </label>
+
         <input type="number" class="form-control" placeholder="search.." [value]="num" (change)="searchInput($event)" >
         </div> 
-        <button type="submit"  class="btn btn-success"
-         (click)="Search()">Search</button>
-        </form>
-    <div class="table-responsive">
-        <table class="table table-centered table-nowrap mb-0 rounded">
-            <thead class="thead-light">
+        
+            <button type="submit"
+        type="button" class="btn btn-outline-danger"  
+                (click)="Search()">Search</button>
+            </form>
+            <br><br>
+                     <div class="table-responsive">
+              <table class="table table-centered table-nowrap mb-0 rounded">
+                <thead class="table-danger">
             <tr>
                 <th class="border-0">id</th>
 
