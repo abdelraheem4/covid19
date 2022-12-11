@@ -11,7 +11,7 @@ import { HomeService } from 'src/app/Services/home.service';
 export class ManageAboutComponent implements OnInit {
   constructor(public home:HomeService, private dialog:MatDialog) { }
   ngOnInit(): void {
-    
+    this.home.getAllAbout();
   }
 
 
