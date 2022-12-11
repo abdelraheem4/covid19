@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CenterComponent } from './center/center.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { FooterComponent } from './footer/footer.component';
 import { HomeUaerComponent } from './home-uaer/home-uaer.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { YourReservationComponent } from './your-reservation/your-reservation.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
+    path:'',
+    component:HomeUaerComponent
+  },
+  {
   path:'reservation',
   component:ReservationComponent
 },
@@ -15,21 +19,14 @@ const routes: Routes = [{
   path:'yourreservation',
   component:YourReservationComponent
 },
-{
-  path:'userhome',
-  component:HomeUaerComponent
-},
-{
-  path:'nav',
-  component:NavbarComponent
-},
-{
-  path:'footer',
-  component:FooterComponent
-},
+
 {
   path:'edit',
   component:EditProfileComponent
+},
+{
+  path:'center',
+  component:CenterComponent
 }
 ];
 

@@ -15,7 +15,6 @@ export class CenterComponent implements AfterViewInit  {
   adress:any;
 
   constructor(public vaccines:VaccinesService,public home:HomeService,private toastr:ToastrService,private http:HttpClient) {
-
     render(
       {
           id: "#payments",
@@ -27,6 +26,8 @@ export class CenterComponent implements AfterViewInit  {
       
           }
         }
+
+        
       );
 
    }
@@ -45,9 +46,7 @@ export class CenterComponent implements AfterViewInit  {
   
       this.adress=this.result.map((coin:any)=>coin.centeraddres);
       console.log(this.adress)
-  
-  
-  
+
     })
   }
 
@@ -68,12 +67,16 @@ export class CenterComponent implements AfterViewInit  {
      },
      {
        position: new google.maps.LatLng(32.02610529058295, 35.866810706305166),
-       title: "Marker 2"
+       title: "Center 2"
      },
      {
        position: new google.maps.LatLng(32.013878230256424, 35.87187970310129),
-       title: "Marker 2"
-     }
+       title: "Center 3"
+     },
+     {
+      position: new google.maps.LatLng(32.012820578199765, 35.88042548987068),
+      title: "Center 4"
+    }
    ];
  
    // public printToConsole():void{

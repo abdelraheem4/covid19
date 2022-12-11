@@ -54,7 +54,9 @@ const routes: Routes = [
   },
   {
     path:'userdashbord',
-    loadChildren:()=>UserdashbordModule
+    loadChildren:()=>UserdashbordModule,
+    canActivate:[AuthorizationGuard]
+
   }
 
 ,
