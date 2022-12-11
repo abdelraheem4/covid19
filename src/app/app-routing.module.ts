@@ -6,6 +6,7 @@ import { AuthorizationGuard } from './authorization.guard';
 import { CenterComponent } from './center/center.component';
 import { DoctorModule } from './doctor/doctor.module';
 import { HomeComponent } from './home/home.component';
+import { UserdashbordModule } from './userdashbord/userdashbord.module';
 
 const routes: Routes = [
   {
@@ -32,8 +33,12 @@ const routes: Routes = [
      loadChildren:()=>DoctorModule,
      canActivate:[AuthorizationGuard]
 
-
+  },
+  {
+    path:'userdashbord',
+    loadChildren:()=>UserdashbordModule
   }
+
 ];
 
 @NgModule({
