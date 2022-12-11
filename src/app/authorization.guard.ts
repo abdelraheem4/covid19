@@ -35,14 +35,7 @@ export class AuthorizationGuard implements CanActivate {
                  return false;
                }
            }
-   
-           else
-           {
-                this.toster.warning('Sorry , this page for Admin');
-                 this.route.navigate(['']);
-                 localStorage.clear();
-                 return false;
-           }
+
    
          }
       return true;
