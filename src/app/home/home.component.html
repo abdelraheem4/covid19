@@ -8,13 +8,15 @@
                      <div >
                         <ul>
                            <div>
-                              <ul style="display:inline-flex;margin-left: 750px;">
+                              <ul [ngClass]="'navv'" style="display:inline-flex;margin-left: 750px;">
                                  <li><a routerLink="/">Home</a></li>
                                    <li><a routerLink="/protect">Protect</a></li>
                                       <li><a routerLink="/about">About</a></li>
                                          <li><a href="doctors.html">Doctors</a></li>
-                                            <li><a routerLink="/symptoms">Symptoms</a></li>
+                                            <li><a routerLink="/symptoms">Symptoms</a></li> 
+                                         <li><a routerLink="/centers">Centers</a></li>
                                              <li><a routerLink="/security/login">Login</a></li>
+
                                  <!-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
                               </ul>
                            </div>
@@ -23,16 +25,17 @@
                         </ul>
                      </div>
                   </div>
-                  <div id="myNav" class="overlay">
+                  <!-- <div id="myNav" class="overlay">
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                     <!-- <div class="overlay-content">
+                      <div class="overlay-content">
                         <a routerLink="/">Home</a>
                         <a routerLink="/protect">Protect</a>
                         <a routerLink="/about">About</a>
                         <a href="doctors.html">Doctors</a>
                         <a routerLink="/symptoms">Symptoms</a>
-                     </div> -->
-                  </div>0
+
+                     </div>
+                  </div> -->
                   <span class="navbar-toggler-icon"></span>
                   <span onclick="openNav()"><img src="assets/home/images/toogle-icon.png" class="toggle_menu"></span>
                   <span onclick="openNav()"><img src="assets/home/images/toogle-icon1.png" class="toggle_menu_1"></span>

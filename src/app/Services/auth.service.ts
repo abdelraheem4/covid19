@@ -57,6 +57,10 @@ export class AuthService {
             localStorage.setItem('token',responce.token);
             let data:any =jwtDecode(responce.token);
             console.log(resp);
+            localStorage.setItem('ID',data.ID)
+            localStorage.setItem('Role',data.Role)
+            localStorage.setItem('Number_of_Vaccines',data.Number_of_Vaccines)
+            localStorage.setItem('namevaccine',data.namevaccine)
             localStorage.setItem('user',JSON.stringify({...data}));
             if(data.Role =="3")
             this.router.navigate(['admin']);
@@ -80,6 +84,17 @@ export class AuthService {
           //     this.toster.error('something wrong');
           //   })
           }
+
+
+checkuseroflogin (){
+  if(localStorage.getItem('user')==null)
+  {
+    this.router.navigate(['security/login'])
+  }
+
+}
+
+          
    }
- 
+  
          
