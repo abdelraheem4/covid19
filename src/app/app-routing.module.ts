@@ -7,6 +7,7 @@ import { AuthorizationGuard } from './authorization.guard';
 import { CenterComponent } from './center/center.component';
 import { DoctorModule } from './doctor/doctor.module';
 import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './shared/error/error.component';
 import { ProtectComponent } from './protect/protect.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
 
@@ -44,9 +45,11 @@ const routes: Routes = [
      path:'managedoctor',
      loadChildren:()=>DoctorModule,
      canActivate:[AuthorizationGuard]
-
-
-  }
+  },
+  {
+    path:'**',
+    component:ErrorComponent
+  },
 ];
 
 @NgModule({
