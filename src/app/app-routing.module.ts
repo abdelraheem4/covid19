@@ -7,12 +7,9 @@ import { AuthorizationGuard } from './authorization.guard';
 import { CenterComponent } from './center/center.component';
 import { DoctorModule } from './doctor/doctor.module';
 import { HomeComponent } from './home/home.component';
-<<<<<<< HEAD
 import { ErrorComponent } from './shared/error/error.component';
-=======
 import { ProtectComponent } from './protect/protect.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
->>>>>>> 7511976c024ea20d61bd40b48895c55ed171129e
 
 const routes: Routes = [
   {
