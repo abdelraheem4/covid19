@@ -138,19 +138,30 @@
 
 
 
+<main class="content">
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <br><br>
+                    <h1 style="font-family: serif; margin-left:45% ;">Manage Vaccine</h1>
 <div class="card border-0 shadow mb-4">
 <div class="card-body">
-    <form class="form-inline" style="margin-top: 3%;">
+    <form class="form-inline" style="margin-top:2%; margin-left: 30%;">
         <div class="form-group mx-sm-3 mb-2">
-        <label for="inputText" class="sr- only">Sarech User : </label>
+        <label for="inputText" class="sr- only"  >Sarech User : </label>
+
         <input type="number" class="form-control" placeholder="search.." [value]="num" (change)="searchInput($event)" >
         </div> 
-        <button type="submit"  class="btn btn-success"
-         (click)="Search()">Search</button>
-        </form>
-    <div class="table-responsive">
-        <table class="table table-centered table-nowrap mb-0 rounded">
-            <thead class="thead-light">
+        
+            <button type="submit"
+        type="button" class="btn btn-outline-danger"  
+                (click)="Search()">Search</button>
+            </form>
+            <br><br>
+                     <div class="table-responsive">
+              <table class="table table-centered table-nowrap mb-0 rounded">
+                <thead class="table-danger">
             <tr>
                 <th class="border-0">id</th>
 
