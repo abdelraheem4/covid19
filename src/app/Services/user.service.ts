@@ -128,7 +128,19 @@ updateUser(body:any){
     this.toastr.error(err.message,err.status);
   })
 }
+getUserById(id:number){
+  this.spinner.show();
+  debugger
+  this.http.get('https://localhost:44352/api/UserAccount/GetById/' + id).subscribe((resp)=>{
+    this.User=[resp];
+    this.spinner.hide();
+    this.toastr.success('returnd Successfully !!');
 
+  },err=>{
+    this.spinner.hide();
+    this.toastr.error(err.message,err.status);
+  })
+}
 deleteUser(id:number)
 {
   this.spinner.show();
