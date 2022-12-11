@@ -277,7 +277,21 @@ export class HomeService {
       }
       )
     }
-
+    SearchVaccinationCenter(name:string)
+    {
+      this.spinner.show();
+      this.http.get('https://localhost:44352/api/VaccinationCenter/SearchVaccinationCenter/' + name).subscribe((resp:any)=>
+      {
+      this.allVacciniationCentre = resp;
+      this.spinner.hide();  
+      this.toastr.success('found SucsessFully');
+      },err=>
+      {
+      this.spinner.hide();
+      this.toastr.error(err.message,err.status);
+      }
+      )
+    }
     getAllAbout(){
       this.spinner.show();
       this.http.get('https://localhost:44352/api/about').subscribe((resp:any)=>

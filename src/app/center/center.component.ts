@@ -145,7 +145,25 @@ export class CenterComponent implements AfterViewInit  {
    });
  
  }
+ name:any='';
 
+
+ inputValue(ev:any){
+   this.name=ev.target.value;
+   console.log(ev.target.value);
+ }
+ 
+ search(){
+   if(this.name != ''){
+ 
+   this.home.SearchVaccinationCenter(this.name);
+   }
+   else{
+     this.home.getAllVacciniationCentre();
+ 
+   }
+ }
+ 
 
 }
  
