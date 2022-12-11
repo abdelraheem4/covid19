@@ -24,14 +24,12 @@ import { TokenInterceptor } from 'src/Interceptor/token.Interceptor';
     AppComponent,
     HomeComponent,
     CenterComponent,
-<<<<<<< HEAD
+
     
     
-=======
     AboutComponent,
     ProtectComponent,
     SymptomsComponent,
->>>>>>> d3d80b59a2053a50347153d08f7e95895ad920f5
   ],
   imports: [
     BrowserModule,

@@ -7,13 +7,13 @@ import { AuthorizationGuard } from './authorization.guard';
 import { CenterComponent } from './center/center.component';
 import { DoctorModule } from './doctor/doctor.module';
 import { HomeComponent } from './home/home.component';
-<<<<<<< HEAD
+
 import { UserdashbordModule } from './userdashbord/userdashbord.module';
-=======
+
 import { ErrorComponent } from './shared/error/error.component';
 import { ProtectComponent } from './protect/protect.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
->>>>>>> d3d80b59a2053a50347153d08f7e95895ad920f5
+
 
 const routes: Routes = [
   {
@@ -49,7 +49,7 @@ const routes: Routes = [
      path:'managedoctor',
      loadChildren:()=>DoctorModule,
      canActivate:[AuthorizationGuard]
-<<<<<<< HEAD
+
 
   },
   {
@@ -57,13 +57,13 @@ const routes: Routes = [
     loadChildren:()=>UserdashbordModule
   }
 
-=======
-  },
+,
+  
   {
     path:'**',
     component:ErrorComponent
   },
->>>>>>> d3d80b59a2053a50347153d08f7e95895ad920f5
+
 ];
 
 @NgModule({
