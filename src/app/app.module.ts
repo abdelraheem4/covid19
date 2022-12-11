@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +14,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
 import { CenterComponent } from './center/center.component';
+import { AboutComponent } from './about/about.component';
+import { ProtectComponent } from './protect/protect.component';
+import { SymptomsComponent } from './symptoms/symptoms.component';
 import { TokenInterceptor } from 'src/Interceptor/token.Interceptor';
 
 @NgModule({
@@ -22,6 +24,9 @@ import { TokenInterceptor } from 'src/Interceptor/token.Interceptor';
     AppComponent,
     HomeComponent,
     CenterComponent,
+    AboutComponent,
+    ProtectComponent,
+    SymptomsComponent,
   ],
   imports: [
     BrowserModule,

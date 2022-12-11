@@ -1,70 +1,51 @@
 <app-sidebar></app-sidebar>
 <main class="content">
-  <div class="pcoded-main-container">
-      <div class="pcoded-wrapper">
-          <div class="pcoded-content">
-              <div class="pcoded-inner-content">
-                  <br><br>
-                  <h1 style="font-family: serif; margin-left:45% ;">Manage Vaccine</h1>
+<div class="card border-0 shadow mb-4">
+  <div class="card-body">
+      <div class="table-responsive">
+        <h1 style="font-family: serif; margin-left:40% ;">Manage Vaccine</h1>
 
-<table tyle="display:inline-block ;">
-
-    <div    class="table">
-      <button (click)="openCreateDialog()" style="background-color: #797979; "
-      >Create</button>
-
-      <form class="form-inline" style="margin-top: 3%;">
+        <table class="  table-centered table-nowrap mb-0 rounded">
+              <div class="table">
+      <form class="form-inline" style="margin-left: 20%;">
             <div class="form-group mx-sm-3 mb-2">
             <label for="inputText" class="sr-`only" style="font-family: Fantasy	;">Course Price</label>
             <input  type="text" class="form-control" id="inputText" placeholder="Vaccine Name" [value]="name" (change)="inputValue($event)" (click)="search()" >
             </div>
             <button type="submit"
-           style="background-color: #797979;"
-            (click)="search()">Search</button>
+        type="button" class="btn btn-outline-danger"  
+                (click)="search()">Search</button>
             </form>
-      <div class="table-striped table-active">
-        <div class="cell">
-          Name
-        </div>
-        <div class="cell">
-          doses
-        </div>
-        <div class="cell">
-          vaccine EXP
-        </div>
-        <div class="cell">
-          ID
-        </div>  <div class="cell">
-          total 
-        </div>
-   
-
-      </div>
-      
-      <div *ngFor="let obj of vaccines.Vaccine" class="row">
-        <div class="cell" data-title="Name">
-            {{obj.vaccinename}}
-                </div>
-        <div class="cell" data-title="Age">
-            {{obj.vaccinedoses}}
-        </div>
-        <div class="cell" data-title="Occupation">
-            {{obj.vaccineexp}}        </div>
-        <div class="cell" data-title="Location">
-            {{obj.vaccineid}}        
-          </div>
-           <br><br><br>
-
+        <table class="table table-centered table-nowrap mb-0 rounded">
+          <button (click)="openCreateDialog()"  class="table-active">Create</button>
+          <br><br>
+          <thead class="table-danger">
+            <tr>
+                <th class="border-0">Name</th>
+                <th class="border-0"> Doses</th>
+                <th class="border-0">Vaccine EXP</th>
+                <th class="border-0">ID</th>
+                <th class="border-0">Total</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let obj of vaccines.Vaccine" >
+            <tr>
+                
+                <td>{{obj.vaccinename}}</td>
+                <td> {{obj.vaccinedoses}}</td>
+                <td>{{obj.vaccineexp}}</td>
+                <td>{{obj.vaccineid}}</td>
+                <td> </td>
+                 
+                  <button (click)="openUpdateDailog(obj)"  class="table-active">update</button> 
+                  <button (click)="openDelteDailog(obj.vaccineid)"  class="table-active">delete</button>
+                 
+            </tr>
             
+          </tbody>
+      </table>
+ 
         
-            <button (click)="openUpdateDailog(obj)"  style="background-color: #797979; margin-right:10%; " > Update</button>
-            <br><br>
-            <button (click)="openDelteDailog(obj.vaccineid)"  style="background-color: #797979; margin-right:10%;  "> Delete</button> 
-           
-
-      </div>
-    </div>
-  </table>
 <ng-template #callUpdateDailog>
   <h2 mat-dialog-title>Add vaccine</h2>
   <mat-dialog-content class="mat-typography">
