@@ -113,6 +113,7 @@ export class ManageVaccineComponent implements OnInit {
   savedata()
   {
     debugger
+    
     this.user.updateUser(this.updateForm.value);
    // this.vaccines.UpdateVaccine(this.updateVaccine.value);
     

@@ -217,9 +217,12 @@
            
             <mat-form-field class="example-full-width" appearance="fill">
             <mat-label> Vaccine Name</mat-label>
-            <input type="text" matInput formControlName="vaccinename"
-            [(ngModel)]="p_data.vaccinename">
-            
+            <select  matNativeControl formControlName="vaccinename" >
+                <option   value="sinopharm"> sinopharm</option>
+                <option value="Sinovac">Sinovac</option>
+                <option value="Pfizer">Pfizer</option>
+               
+              </select>
             <mat-error *ngIf="updateForm.controls['vaccinename'].hasError('required')">
                 Vaccine Name <strong>required</strong>
             </mat-error>
