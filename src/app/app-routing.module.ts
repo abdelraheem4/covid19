@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
+import { AuthorizationGuard } from './authorization.guard';
 import { CenterComponent } from './center/center.component';
+import { DoctorModule } from './doctor/doctor.module';
 import { HomeComponent } from './home/home.component';
 import { ProtectComponent } from './protect/protect.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
@@ -24,21 +26,17 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    loadChildren:()=>AdminModule
-  },
-  {
-    path:'about',
-    component:AboutComponent
-  },
-  {
-    path:'protect',
-    component:ProtectComponent
-  },
-  {
-    path:'symptoms',
-    component:SymptomsComponent
-  },
+    loadChildren:()=>AdminModule,
+    canActivate:[AuthorizationGuard]
 
+  },
+  {
+     path:'managedoctor',
+     loadChildren:()=>DoctorModule,
+     canActivate:[AuthorizationGuard]
+
+
+  }
 ];
 
 @NgModule({

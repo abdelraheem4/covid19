@@ -32,7 +32,7 @@ export class ManageUserComponent implements OnInit{
   })
 
   ngOnInit(): void {
-    debugger
+    
     this.user.getALLUser();
   }
 

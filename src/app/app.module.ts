@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +17,7 @@ import { CenterComponent } from './center/center.component';
 import { AboutComponent } from './about/about.component';
 import { ProtectComponent } from './protect/protect.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
+import { TokenInterceptor } from 'src/Interceptor/token.Interceptor';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,12 @@ import { SymptomsComponent } from './symptoms/symptoms.component';
     MatButtonModule,
     MatDialogModule,
   ],
-  providers: [ ],
+  exports: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
