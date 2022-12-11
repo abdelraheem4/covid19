@@ -26,9 +26,19 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    loadChildren:()=>AdminModule,
-    canActivate:[AuthorizationGuard]
-
+    loadChildren:()=>AdminModule
+  },
+  {
+    path:'about',
+    component:AboutComponent
+  },
+  {
+    path:'protect',
+    component:ProtectComponent
+  },
+  {
+    path:'symptoms',
+    component:SymptomsComponent
   },
   {
      path:'managedoctor',
