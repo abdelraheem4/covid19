@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { HomeService } from '../Services/home.service';
 
 @Component({
@@ -9,10 +10,11 @@ import { HomeService } from '../Services/home.service';
 
 export class HomeComponent implements OnInit {
 
-  constructor( ) { }
+  constructor(private toastr:ToastrService,public home:HomeService) { }
 
   ngOnInit(): void {
-    
+    this.home.getAllHome();
+
   } 
 
 

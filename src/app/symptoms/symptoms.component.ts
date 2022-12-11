@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { HomeService } from '../Services/home.service';
 
 @Component({
   selector: 'app-symptoms',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SymptomsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public home:HomeService, private dialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.home.getAllAbout();
+
   }
 
 }

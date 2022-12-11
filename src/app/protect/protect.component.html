@@ -1,1 +1,60 @@
-<p>protect works!</p>
+<app-header></app-header>
+<div class="protect_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-sm-12">
+             <h1 class="protect_taital">How to Protect Yourself</h1>
+             <p class="protect_text">English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+          </div>
+       </div>
+       <div class="protect_section_2 layout_padding">
+          <div class="row">
+             <div class="col-md-6">
+                <h1 class="hands_text"><a href="#">Wash your <br>hands frequently</a></h1>
+                <h1 class="hands_text_2"><a href="#">Maintain social <br>distancing</a></h1>
+                <h1 class="hands_text"><a href="#">Avoid touching eyes,<br>nose and mouth</a></h1>
+             </div>
+             <div class="col-md-6">
+                <div class="image_2"><img src="assets/home/images/img-2.png"></div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="site-section" *ngFor="let obj of home.allAbout">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-7 mx-auto text-center">
+          <span class="subheading">{{obj.littleprotecttitle}}</span>
+          <h2 class="mb-4 section-heading">{{obj.protecttitle}}</h2>
+          <p>{{obj.descprotect}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 ">
+          <div class="row mt-5 pt-5">
+            <div class="col-lg-6 do ">
+              <h3>{{obj.protectpoint1}}</h3>
+              <ul class="list-unstyled check">
+                <li>{{obj.point1desc1}}</li>
+                <li>{{obj.point1desc2}}</li>
+                <li>{{obj.point1desc3}}</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 dont ">
+              <h3>{{obj.protectpoint2}}</h3>
+              <ul class="list-unstyled cross">
+                <li>{{obj.point2desc1}}</li>
+                <li>{{obj.point2desc2}}</li>
+                <li>{{obj.point2desc3}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="./assets/images/protect.png" alt="Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+ <app-footer></app-footer>
