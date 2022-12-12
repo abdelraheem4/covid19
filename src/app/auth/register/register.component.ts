@@ -24,12 +24,9 @@ export class RegisterComponent implements OnInit{
     Email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',[Validators.required,Validators.minLength(8)]),
     age:new FormControl('',[Validators.required]),
-<<<<<<< HEAD
     recaptcha:new FormControl (['', Validators.nullValidator]),
 
-=======
     roleid:new FormControl()
->>>>>>> 74326ccaecd33c3ccb7e7701052db23d02edebdb
   })
 
   uploadImage(file:any){
