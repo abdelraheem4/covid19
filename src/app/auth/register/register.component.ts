@@ -19,14 +19,10 @@ export class RegisterComponent implements OnInit{
     fullname :new FormControl('',[Validators.required]),
     username :new FormControl('',[Validators.required]),
     phonenumber :new FormControl('',[Validators.required]),
-    numberofvaccines :new FormControl('',[Validators.required]),
     image:new FormControl(),
     Email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',[Validators.required,Validators.minLength(8)]),
     age:new FormControl('',[Validators.required]),
-    recaptcha:new FormControl (['', Validators.nullValidator]),
-
-    roleid:new FormControl()
   })
 
   uploadImage(file:any){
@@ -44,7 +40,6 @@ submit(){
   setTimeout(()=>{
     this.spinner.hide();
   },3000)
-  this.registerForm.controls['roleid'].setValue(this.roleidd)
  this.user.createUser(this.registerForm.value);
  this.route.navigate(['security/login']);
 }
@@ -53,6 +48,7 @@ submit(){
 
 
   ngOnInit(): void {
+    
    } 
    siteKey:string="6LeWKnEjAAAAAEcVipIDQ2eyUbkyqu-JnIyhGs_S";
 

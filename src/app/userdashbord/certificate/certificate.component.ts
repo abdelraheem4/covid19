@@ -47,6 +47,8 @@ fullname:any
     this.namevaccine=localStorage.getItem("namevaccine");
     this.fullname=localStorage.getItem("fullname");
 
+    this.user.srarchByid(this.id)
+
   }
   
 
