@@ -61,6 +61,8 @@ export class AuthService {
             localStorage.setItem('Role',data.Role)
             localStorage.setItem('Number_of_Vaccines',data.Number_of_Vaccines)
             localStorage.setItem('namevaccine',data.namevaccine)
+            localStorage.setItem('fullname',data.fullname)
+
             localStorage.setItem('user',JSON.stringify({...data}));
             if(data.Role =="3")
             this.router.navigate(['admin']);

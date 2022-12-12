@@ -34,7 +34,6 @@ namevaccine:any
   ngOnInit(): void {
     this.auth.checkuseroflogin();
    
-debugger
     this.id=Number.parseInt( localStorage.getItem("ID"));
     this.role=Number.parseInt( localStorage.getItem("Role"));
     this.Number_of_Vaccines=Number.parseInt(localStorage.getItem("Number_of_Vaccines"));

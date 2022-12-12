@@ -110,6 +110,10 @@ background-size: cover; ">
          </mat-error>
        </mat-form-field>
      </div>
+     <ngx-recaptcha2 #captchaElem
+     [siteKey]="siteKey"
+     formControlName="recaptcha">
+   </ngx-recaptcha2>
             </div>
          </div>
 
@@ -119,10 +123,7 @@ background-size: cover; ">
             type="submit" value="Register" >Register</button></div>
 
            
-           <!-- <button  style="background-color: rgb(181, 177, 179);" 
-           [disabled]="!registerForm.valid" (click)="submit()"
-           type="submit" value="Register">Register
-         </button> -->
+       
            <p style="text-align: center;cursor: pointer;"(click)="goToLogin()" >Already have account</p>
          </form>
        </div>

@@ -3,12 +3,7 @@
 background-repeat: no-repeat;
 background-size: cover; ">
 
-<!-- <div id="login">
-  <div class="login-card">
-    <div class="card-title">
-      <h1>Please Sign In</h1>
-    </div>
-    <div class="content" style="width:50;"> -->
+\
       <div class="container">
         <div class="row justify-content-center form-bg-image" data-background-lg="assets/img/signin.svg">
            <div class="col-12 d-flex align-items-center justify-content-center">
@@ -17,7 +12,7 @@ background-size: cover; ">
                     <h1 class="mb-0 h3">Sign in </h1>
                </div>
 
-      <form class="mt-4 con">
+      <form class="mt-4 con"  >
         <div class="form-group mb-4">
           <div class="input-group">
 
@@ -47,6 +42,9 @@ background-size: cover; ">
         </mat-error>
      </mat-form-field>
     </div>
+    <ngx-recaptcha2 #captchaElem [siteKey]="siteKey">
+  </ngx-recaptcha2>
+  
   </div>
 </div>
 
@@ -54,7 +52,7 @@ background-size: cover; ">
 
    
       </form>
-      <div class="d-grid"> <button (click)="submit()" class="btn btn-gray-800" [disabled]="!username.valid||!password.valid" >Login</button></div>
+      <div class="d-grid"> <button (click)="submit()" class="btn btn-gray-800" [disabled]="!username.valid||!password.valid||!recaptcha.valid" >Login</button></div>
 
       <span class="fw-normal" >Not registered? <a (click)=" goToregister()"  class="fw-bold">Create account</a></span> 
     </div>

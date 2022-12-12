@@ -9,7 +9,7 @@
               <div class="table">
       <form class="form-inline" style="margin-left: 20%;">
             <div class="form-group mx-sm-3 mb-2">
-            <label for="inputText" class="sr-`only" style="font-family: Fantasy	;">Course Price</label>
+            <label for="inputText" class="sr-`only" style="font-family: Fantasy	;">Vaccine Name</label>
             <input  type="text" class="form-control" id="inputText" placeholder="Vaccine Name" [value]="name" (change)="inputValue($event)" (click)="search()" >
             </div>
             <button type="submit"
@@ -87,8 +87,9 @@
 </ng-template>
 
 <ng-template #callDelteDailog>
-<h2>Are You Sure ></h2>
+<h2>Are You Sure ?</h2>
 <button mat-dialog-close="yes">YES</button>
+<hr>
 <button mat-dialog-close="cancel">CANCEL</button>
 
 </ng-template >
