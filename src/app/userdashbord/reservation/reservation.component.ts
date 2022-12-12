@@ -17,7 +17,7 @@ export class ReservationComponent implements OnInit {
     actualdatedose1:new FormControl('',Validators.required),
     actualdatedose2:new FormControl('',Validators.required),
     massage:new FormControl(),
-    Status:new FormControl(),
+    status:new FormControl(),
     userid:new FormControl()
   })
   id:any 
@@ -32,8 +32,10 @@ export class ReservationComponent implements OnInit {
     console.log(this.id);
 
   }
+  Status:any ='under process'
   saveCREATEData(){
     this.createForm.controls['userid'].setValue(this.id)
+    this.createForm.controls['status'].setValue(this.Status)
     debugger
     this.reservation.createreservation(this.createForm.value);
   

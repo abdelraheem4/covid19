@@ -30,6 +30,22 @@ export class ReservationService {
     )
 
   }
+  getbyid(num:number){
+
+    this.spinner.show();
+  debugger;
+  this.http.get('https://localhost:44352/api/Reservation/GetById/'+num).subscribe((res:any)=>{
+      debugger
+      this.reservation =[ res] ;
+      this.spinner.hide();
+      this.toastr.success('Successfully !!');
+    },err=>{
+      this.spinner.hide();
+      this.toastr.error(err.message,err.status);
+    }
+    )
+  }
+
   createreservation(body:any){
     debugger
 this.spinner
@@ -72,7 +88,7 @@ this.http.post('https://localhost:44352/api/Reservation',body).subscribe((resp)=
     })
   }
 
-  SearchBetweenFirstDose(DateFrom:Date, DateTo:Date){
+  SearchBetweenFirstDose(DateFrom:any, DateTo:any){
     this.spinner.show();
     this.http.get('https://localhost:44352/api/Reservation/searchByFirstDose/' + DateFrom + '/' + DateTo).subscribe((resp)=>{
       this.reservation = resp;  
@@ -86,7 +102,7 @@ this.http.post('https://localhost:44352/api/Reservation',body).subscribe((resp)=
 })
 }
 allBySearchSecondDose:any;
-SearchBetweenSecondDose(DateFrom:Date, DateTo:Date){
+SearchBetweenSecondDose(DateFrom:any, DateTo:any){
   this.spinner.show();
   this.http.get('https://localhost:44352/api/Reservation/searchBySecondDose/' + DateFrom + '/' + DateTo).subscribe((resp)=>{
     this.reservation = resp;
