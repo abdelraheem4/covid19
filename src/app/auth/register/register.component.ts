@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit{
     Email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',[Validators.required,Validators.minLength(8)]),
     age:new FormControl('',[Validators.required]),
+    roleid:new FormControl()
   })
 
   uploadImage(file:any){
@@ -35,11 +36,13 @@ export class RegisterComponent implements OnInit{
     this.user.uploadAttachment(formdata);
   
 } 
+roleidd:any=1
 submit(){
   this.spinner.show();
   setTimeout(()=>{
     this.spinner.hide();
   },3000)
+  this.registerForm.controls['roleid'].setValue(this.roleidd)
  this.user.createUser(this.registerForm.value);
  this.route.navigate(['security/login']);
 }

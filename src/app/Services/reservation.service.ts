@@ -30,6 +30,22 @@ export class ReservationService {
     )
 
   }
+  getbyid(num:number){
+
+    this.spinner.show();
+  debugger;
+  this.http.get('https://localhost:44352/api/Reservation/GetById/'+num).subscribe((res:any)=>{
+      debugger
+      this.reservation =[ res] ;
+      this.spinner.hide();
+      this.toastr.success('Successfully !!');
+    },err=>{
+      this.spinner.hide();
+      this.toastr.error(err.message,err.status);
+    }
+    )
+  }
+
   createreservation(body:any){
     debugger
 this.spinner

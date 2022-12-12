@@ -18,7 +18,7 @@ export class AppComponent {
   }
   
 ngOnInit(){
-  this.toaster.success('Weclome');
+ 
 }
 
   
