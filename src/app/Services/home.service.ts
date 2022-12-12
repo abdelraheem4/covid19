@@ -15,6 +15,7 @@ export class HomeService {
 
   allHome:any[] = [];
   allAbout:any[] = [];
+  allFooter:any[] = [];
   logoImage:any;
   title1Im:any;
   new1Im:any;
@@ -361,6 +362,59 @@ export class HomeService {
     deleteAbout(id:number){
       this.spinner.show();
       this.http.delete('https://localhost:44352/api/about/Delete/' + id).subscribe((resp)=>
+      {
+        this.spinner.hide();
+        this.toastr.success('Deleted');
+      }, err=>
+      {
+        this.spinner.hide();
+        this.toastr.error(err.message, err.status);
+      })
+    }
+
+    getAllFooter(){
+      this.spinner.show();
+      this.http.get('https://localhost:44352/api/footer/').subscribe((resp:any)=>
+      {
+        this.spinner.hide();
+        this.allFooter = resp;
+        this.toastr.success('All footer Centers');
+      }, err=>
+      {
+        this.spinner.hide();
+        this.toastr.error(err.message, err.status);
+      })
+    }
+    createFooter(body:any){
+     
+      this.spinner.show();
+      this.http.post('https://localhost:44352/api/footer/', body).subscribe((resp)=>
+      {
+        this.spinner.hide();
+        this.toastr.success('Created');
+      }, err=>
+      {
+        this.spinner.hide();
+        this.toastr.error(err.message, err.status);
+      })
+    }
+
+    updateFooter(body:any){
+      this.spinner.show();
+      this.http.put('https://localhost:44352/api/footer/', body).subscribe((resp)=>
+      {
+        this.spinner.hide();
+        this.toastr.success('Updated');
+      }, err=>
+      {
+        this.spinner.hide();
+        this.toastr.error(err.message, err.status);
+      });
+    }
+
+    deleteFooter(id:number){
+      this.spinner.show();
+      this.http.delete('https://localhost:44352/api/footer/Delete/' + id).subscribe((resp)=>
       {
         this.spinner.hide();
         this.toastr.success('Deleted');

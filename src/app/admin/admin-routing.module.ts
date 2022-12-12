@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { ManageAboutComponent } from './manage-about/manage-about.component';
+import { ManageFooterComponent } from './manage-footer/manage-footer.component';
 import { ManageHomeComponent } from './manage-home/manage-home.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { ManagevaccinesComponent } from './managevaccines/managevaccines.component';
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path:'updateprofile',
     component:UpdateProfileComponent
+  },
+  {
+    path:'manageFooter',
+    component:ManageFooterComponent
   },
   
 ];
