@@ -118,3 +118,6 @@
     cursor: pointer;
   }
   
+  .nav-link {
+    font-size: 15px !important;
+}
