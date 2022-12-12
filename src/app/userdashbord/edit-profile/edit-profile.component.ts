@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent implements OnInit {
-
+  @ViewChild('callUpdateDailog') callUpdateDailog!:TemplateRef<any> 
   constructor(private router:Router,private auth:AuthService,public user:UserService,private dialog:MatDialog) { }
 
   updateForm:FormGroup= new FormGroup({
@@ -33,17 +33,40 @@ Number_of_Vaccines:any
 namevaccine:any
   ngOnInit(): void {
     this.auth.checkuseroflogin();
+    
    
 debugger
     this.id=Number.parseInt( localStorage.getItem("ID"));
+   
     this.role=Number.parseInt( localStorage.getItem("Role"));
-    this.Number_of_Vaccines=Number.parseInt(localStorage.getItem("Number_of_Vaccines"));
-    this.namevaccine=localStorage.getItem("namevaccine");
+    this.user.srarchByid(this.id)
+    
     console.log(this.id);
     console.log("ahmad")
    console.log(this.role)
-   console.log(this.Number_of_Vaccines)
-   console.log(this.namevaccine)
+   
+  }
+
+  p_data :any={};
+  openUpdateDailog(obj:any)
+  {
+    this.p_data={
+      userid:obj.userid,
+      fullname:obj.fullname,
+      username:obj.username,
+     
+      phonenumber:obj.phonenumber,
+      age:obj.age,
+      numberofvaccines:obj.numberofvaccines,
+      email:obj.email,
+      password:obj.password,
+      roleid:obj.roleid,
+      image:obj.image,
+
+
+  }
+  this.updateForm.controls['userid'].setValue(this.p_data.userid);
+  this.dialog.open(this.callUpdateDailog);
   }
 
 

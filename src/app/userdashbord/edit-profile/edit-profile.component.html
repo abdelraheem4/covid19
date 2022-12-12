@@ -1,107 +1,151 @@
-<app-navbar></app-navbar>
-<br/>
-<br/>
-<br/>
-<br/>
-<div class="container">
-    <div class="row gutters">
-    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-    <div class="card h-100">
-        <div class="card-body">
-            <div class="account-settings">
-                <div class="user-profile">
-                    <div class="user-avatar">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
-                    </div>
-                    <h5 class="user-name">Yuki Hayashi</h5>
-                    <h6 class="user-email">yuki@Maxwell.com</h6>
-                </div>
-                <div class="about">
-                    <h5>About</h5>
-                    <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-    <div class="card h-100">
-        <div class="card-body">
-            <div class="row gutters">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h6 class="mb-2 text-primary">Personal Details</h6>
-                </div>
-                <form [formGroup]="updateForm" >
-                    <div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <mat-form-field >
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        
-                        <input type="text"  matInput formControlName="fullname" class="form-control" >
-                   
-                    </div>
-                  </mat-form-field>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <mat-form-field >
-                    <div class="form-group">
-                        <label for="eMail">User Name</label>
-                        <input type="text" matInput formControlName="username" class="form-control" >
-                    </div>
-                </mat-form-field>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <mat-form-field >
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="number" matInput formControlName="phonenumber" class="form-control"  >
-                    </div>
-                </mat-form-field>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <mat-form-field >
-                    <div class="form-group">
-                        <label for="website">Email</label>
-                        <input type="text" matInput formControlName="email" class="form-control" >
-                    </div>
-                </mat-form-field>
-                </div>
-            </div>
-            <div class="row gutters">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                   
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                <mat-form-field>
-                    <div class="form-group">
-                        <label for="Street">password</label>
-                        <input type="password"matInput formControlName="password" class="form-control"  >
-                    </div>
-                </mat-form-field>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                <mat-form-field>
-                    <div class="form-group">
-                        <label for="ciTy">Age</label>
-                        <input type="number" matInput formControlName="age" class="form-control" >
-                    </div>
-                </mat-form-field>
-                </div>
-                
-            </div>
+<body>
+    <app-navbar></app-navbar>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+<div id="wrapper">
+    <h1>Your Profile</h1>
+
+    <table id="keywords" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+        <th><span>Name</span></th>
+        <th><span>user Name</span></th>
+        <th><span>phonenumber</span></th>
+        <th><span>Email</span></th>
+        <th><span>Password</span></th>
+        <th><span>Age</span></th>
+        <th><span>Image</span></th>
+        <th><span>#..</span></th>
         
+        </tr>
+    </thead>
+    <tbody *ngFor="let obj of user.User" >
+        <tr>
+        <td class="lalign">{{obj.fullname}}</td>
+        <td>{{obj.username}}</td>
+        <td>{{obj.phonenumber}}</td>
+        <td>{{obj.email}}</td>
+        <td>{{obj.password}}</td>
+        <td>{{obj.age}}</td>
+        <td><img src="../../../assets/images/{{obj.image}}" width="100" height="200">
+        </td>
+        <button (click)="openUpdateDailog(obj)">Update</button>
+        </tr>
+       
+    </tbody>
+    
+    </table>
+</div>
+</body>
+  
+
+
+
+<ng-template #callUpdateDailog>
+
+    <mat-dialog-content class="mat-typography">
+        <form class="example-form" [formGroup]="updateForm" >
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> Name </mat-label>
+                <input type="text" matInput formControlName="fullname"
+                [(ngModel)]="p_data.fullname"
+                >
+                
+                <mat-error *ngIf="updateForm.controls['fullname'].hasError('required')">
+                Name  <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>User Name</mat-label>
+                <input type="text" matInput formControlName="username"
+                [(ngModel)]="p_data.username"
+                >
+                
+                <mat-error *ngIf="updateForm.controls['username'].hasError('required')">
+                    User Name  <strong>required</strong>
+                </mat-error>
+                </mat-form-field>
+                <br>
+    
+    
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Phone Number</mat-label>
+                <input type="number" matInput formControlName="phonenumber"
+                [(ngModel)]="p_data.phonenumber"
+                >
+                
+                <mat-error *ngIf="updateForm.controls['phonenumber'].hasError('required')">
+                    Phone Number <strong>required</strong>
+                </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input type="text" matInput formControlName="email"
+                [(ngModel)]="p_data.email">
+                
+                <mat-error *ngIf="updateForm.controls['email'].hasError('required')">
+                    Email  <strong>required</strong>
+                </mat-error>
+                </mat-form-field>
+                <br>
+                
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input type="text" matInput formControlName="password"
+                [(ngModel)]="p_data.password">
+                
+                <mat-error *ngIf="updateForm.controls['password'].hasError('required')">
+                    Password <strong>required</strong>
+                </mat-error>
+                </mat-form-field>
+                <br>
+                
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Age</mat-label>
+                <input type="number" matInput formControlName="age"
+                [(ngModel)]="p_data.age">
+                
+                <mat-error *ngIf="updateForm.controls['age'].hasError('required')">
+                    Age <strong>required</strong>
+                </mat-error>
+                </mat-form-field>
+                <br>
+                <!-- <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Role id</mat-label>
+                <input type="number" matInput formControlName="roleid"
+                [(ngModel)]="p_data.roleid">
+                
+                <mat-error *ngIf="updateForm.controls['roleid'].hasError('required')">
+                    Role id <strong>required</strong>
+                </mat-error>
+                </mat-form-field>
+                <br> -->
+    
+                <input type="file" #file formControlName="image" [(ngModel)]="p_data.image" (change)="uploadfile(file.files)"> 
         </form>
-            <div class="row gutters">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="text-right">
-                        <button type="button"  name="submit" class="btn btn-secondary">Cancel</button>
-                        <button type="button"  name="submit" class="btn btn-primary"(click)="savedata()">Update</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="savedata()">Save</button>
+    </mat-dialog-actions>
+    
+    
+    
+    
+    </ng-template>
