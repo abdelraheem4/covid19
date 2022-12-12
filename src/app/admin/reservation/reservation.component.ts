@@ -20,32 +20,52 @@ datefromSecond:any = '';
 datetoSecond:any =''; 
 datefromFirst:any ='';
 datetoFirst:any ='';
+
+////////Search First Date
+searchInputFromFirst(ev:any){
+  this.datefromFirst = ev.target.value;
+   }
+   searchInputToFirst(ev:any){
+    this.datetoFirst = ev.target.value;
+     } 
+  SearchBetweenFirstDose(){
+    if(this.datefromFirst == '' && this.datetoFirst == '')
+    this.reservation.getall();
+    else if(this.datefromFirst != '' && this.datetoFirst != '')
+    this.reservation.SearchBetweenFirstDose(this.datefromFirst, this.datetoFirst);
+    else if(this.datefromFirst != '' && this.datetoFirst == ''){
+    this.datetoFirst = '2024-12-31';
+    this.reservation.SearchBetweenFirstDose(this.datefromFirst, this.datetoFirst);
+    }
+    else {
+      this.datefromFirst = '0001-01-01';
+      this.reservation.SearchBetweenFirstDose(this.datefromFirst, this.datetoFirst);
+    }
+
+  }
+////////Search Second Date
 searchInputFromSecond(ev:any){
   this.datefromSecond = ev.target.value;
-  console.log(this.datefromSecond)
    }
    searchInputToSecond(ev:any){
     this.datetoSecond = ev.target.value;
-    console.log(this.datetoSecond)
      }
      
-
   SearchBetweenSecondDose(){
+    if(this.datefromSecond == '' && this.datetoSecond == '')
+    this.reservation.getall();
+    else if(this.datefromSecond != '' && this.datetoSecond != '')
     this.reservation.SearchBetweenSecondDose(this.datefromSecond, this.datetoSecond);
-  }
-  searchInputFromFirst(ev:any){
-    this.datefromFirst = ev.target.value;
-    console.log(this.datefromFirst)
-     }
-     searchInputToFirst(ev:any){
-      this.datetoFirst = ev.target.value;
-      console.log(this.datetoFirst)
-       }
-       
-  
-    SearchBetweenFirstDose(){
-      this.reservation.SearchBetweenFirstDose(this.datefromFirst, this.datetoFirst);
+    else if(this.datefromSecond != '' && this.datetoSecond == ''){
+    this.datetoSecond = '2024-12-31';
+    this.reservation.SearchBetweenSecondDose(this.datefromSecond, this.datetoSecond);
     }
+    else {
+      this.datefromSecond = '0001-01-01';
+      this.reservation.SearchBetweenSecondDose(this.datefromSecond, this.datetoSecond);
+    }
+  }
+  
   updateForm:FormGroup = new FormGroup ({
     Id: new FormControl(),
     actualdatedose1:new FormControl('',Validators.required),
@@ -84,7 +104,7 @@ saveCREATEData(){
 }
 openDelteDailog(Id:number){
   const dialogRef = this.dialog.open(this.callDelteDailog);
-  dialogRef.afterClosed().subscribe((res)=>{
+  dialogRef.afterClosed().subscribe((res)=>{  
     if(res != undefined){
       if(res == 'yes')
       this.reservation.deletereservation(Id);
