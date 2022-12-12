@@ -1,6 +1,6 @@
 
 <div id="content">
-  <div  id="contentToConvert" class="container pm-certificate-container">
+  <div  id="contentToConvert" class="container pm-certificate-container" *ngFor="let obj of user.User" >
       <div class="outer-border"></div>
       <div class="inner-border"></div>
       
@@ -19,7 +19,7 @@
                 <div class="row">
                   <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
                   <div class="pm-certificate-name underline margin-0 col-xs-8 text-center">
-                    <span class="pm-name-text bold">user name</span>
+                    <span class="pm-name-text bold">{{obj.fullname}}</span>
                   </div>
                   <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
                 </div>
@@ -30,7 +30,7 @@
                   <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
                   <div class="pm-earned col-xs-8 text-center">
                     <span class="pm-earned-text padding-0 block cursive">Number Of Doses</span>
-                    <span class="pm-credits-text block bold sans">3</span>
+                    <span class="pm-credits-text block bold sans">{{obj.numerofvaccines}}</span>
                   </div>
                   <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
                   <div class="col-xs-12"></div>
@@ -51,7 +51,7 @@
                 <div class="row">
                   <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
                   <div class="pm-course-title underline col-xs-8 text-center">
-                    <span class="pm-credits-text block bold sans">pfizer</span>
+                    <span class="pm-credits-text block bold sans">{{obj.vaccinename}}</span>
                   </div>
                   <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
                 </div>
