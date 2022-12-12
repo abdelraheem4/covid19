@@ -35,7 +35,6 @@ namevaccine:any
     this.auth.checkuseroflogin();
     
    
-debugger
     this.id=Number.parseInt( localStorage.getItem("ID"));
    
     this.role=Number.parseInt( localStorage.getItem("Role"));

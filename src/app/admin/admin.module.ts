@@ -24,6 +24,7 @@ import { TestmonialComponent } from './testmonial/testmonial.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { UserVaccineReportComponent } from './user-vaccine-report/user-vaccine-report.component';
 import { VaccinaiationCnterComponent } from './vaccinaiation-cnter/vaccinaiation-cnter.component';
+import { ManageFooterComponent } from './manage-footer/manage-footer.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { VaccinaiationCnterComponent } from './vaccinaiation-cnter/vaccinaiation
     TestmonialComponent,
     UpdateProfileComponent,
     UserVaccineReportComponent,
-    VaccinaiationCnterComponent
+    VaccinaiationCnterComponent,
+    ManageFooterComponent
   ],
   imports: [
     CommonModule,

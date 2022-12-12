@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeUaerComponent } from './home-uaer/home-uaer.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CenterComponent } from './center/center.component';
+import { CertificateComponent } from './certificate/certificate.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CenterComponent } from './center/center.component';
     FooterComponent,
     HomeUaerComponent,
     EditProfileComponent,
-    CenterComponent
+    CenterComponent,
+    CertificateComponent
   ],
   imports: [
     CommonModule,

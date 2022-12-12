@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { UserService } from 'src/app/Services/user.service';
@@ -12,7 +12,7 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class RegisterComponent implements OnInit{
 
-  constructor(private route:Router,private spinner :NgxSpinnerService,private user:UserService) { }
+  constructor(private formBuilder: FormBuilder,private route:Router,private spinner :NgxSpinnerService,private user:UserService) { }
 
 
   registerForm :FormGroup= new FormGroup({
@@ -24,6 +24,8 @@ export class RegisterComponent implements OnInit{
     Email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',[Validators.required,Validators.minLength(8)]),
     age:new FormControl('',[Validators.required]),
+    recaptcha:new FormControl (['', Validators.nullValidator]),
+
     roleid:new FormControl()
   })
 
@@ -52,6 +54,8 @@ submit(){
 
   ngOnInit(): void {
    } 
+   siteKey:string="6LeWKnEjAAAAAEcVipIDQ2eyUbkyqu-JnIyhGs_S";
+
    matchError(){
     if(this.registerForm.controls['password'].value==
     this.registerForm.controls['confirmPassword'].value)

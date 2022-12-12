@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import {MatInputModule} from '@angular/material/input';
     AuthRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    NgxCaptchaModule
   ]
 })
 export class AuthModule { }

@@ -19,6 +19,9 @@ import { ProtectComponent } from './protect/protect.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
 import { TokenInterceptor } from 'src/Interceptor/token.Interceptor';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,7 @@ import { TokenInterceptor } from 'src/Interceptor/token.Interceptor';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
+    
   ],
   exports: [],
   providers: [{
