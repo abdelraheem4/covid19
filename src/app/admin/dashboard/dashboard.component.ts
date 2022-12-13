@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Services/home.service';
 import { UserService } from 'src/app/Services/user.service';
 import { CreateUserComponent } from '../create-user/create-user.component';
-import { Chart } from 'chart.js';
+import { Chart,registerables } from 'chart.js';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions={
@@ -31,6 +31,8 @@ export class DashboardComponent {
     this.user.GetTotalUsers();
     this.user.GetTotalDoctors();
     this.home.gettotalCenters();
+
+    Chart.register(...registerables)
   }
 
   covidData(){
