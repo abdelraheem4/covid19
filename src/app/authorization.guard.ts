@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { t } from 'chart.js/dist/chunks/helpers.core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 
@@ -38,13 +39,17 @@ export class AuthorizationGuard implements CanActivate {
 
    
          }
-      return true;
+         else{
+          this.toster.warning('you are not user from db')
+          return false;
+         }
+         return true;
      }
       else{
          this.route.navigate(['security/login']);
          this.toster.warning('Please Login');
-         return false;
-      }
-     }  }
+         return false;}
+     } 
+     }
   
  
