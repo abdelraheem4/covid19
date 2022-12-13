@@ -16,6 +16,11 @@
         type="button" class="btn btn-outline-danger"  
                 (click)="search()">Search</button>
             </form>
+
+
+
+<!-- 
+
         <table class="table table-centered table-nowrap mb-0 rounded">
           <button (click)="openCreateDialog()"  class="table-active">Create</button>
           <br><br>
@@ -44,7 +49,89 @@
             
           </tbody>
       </table>
- 
+  -->
+
+
+
+
+
+
+  <main class="content">
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <br><br>
+                    <h1 style="font-family: serif; margin-left:45% ;">Manage User</h1>
+                    <br><br>
+                    <button (click)="openCreateDialog()"  class="table-active">Create</button>    <br><br>
+    
+    <div class="card border-0 shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+    <table class="table table-centered table-nowrap mb-0 rounded">
+        <thead class="table-danger">
+          <tr>
+             <th scope="col"> Name</th>
+            <th scope="col">Doses</th>
+            <th scope="col">Vaccine EXP</th>
+            <th scope="col">ID</th>
+            <th scope="col">update</th>
+            <th scope="col">delete</th>
+            
+          </tr>
+        </thead>
+        <tbody *ngFor="let obj of vaccines.Vaccine">
+          <tr>
+             
+            <td>{{obj.vaccinename}}</td>
+            <td>{{obj.vaccinedoses}}</td>
+            <td>{{obj.vaccineexp}}</td>
+            <td>{{obj.vaccineid}}</td>
+           
+    
+            
+             <td> <button (click)="openUpdateDailog(obj)"  class="table-active">update</button> </td>
+             <td> <button (click)="openDelteDailog(obj.vaccineid)"  class="table-active">delete</button> </td>
+                
+     </tr>
+          
+    <br>
+     
+    
+        </tbody>
+      </table>
+    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
 <ng-template #callUpdateDailog>
   <h2 mat-dialog-title>Add vaccine</h2>
