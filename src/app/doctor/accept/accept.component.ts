@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DoctorService } from 'src/app/Services/doctor.service';
 import { ReservationService } from 'src/app/Services/reservation.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-accept',
@@ -14,7 +15,7 @@ export class AcceptComponent implements OnInit {
   @ViewChild('callUpdateDailog') callUpdateDailog!:TemplateRef<any> 
   @ViewChild('callDeleteDailog') callDeleteDailog!:TemplateRef<any> 
 userReservation: any;
-  constructor(private router:Router,public doctor:DoctorService,public reservation:ReservationService,private dialog:MatDialog) { }
+  constructor(private router:Router,public user:UserService,public doctor:DoctorService,public reservation:ReservationService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.doctor.getALLUserReservation();
@@ -55,5 +56,16 @@ userReservation: any;
     debugger
     this.reservation.Updatereservation(this.updateForm.value);
 
+}
+
+num:number=0;
+searchInput(ev:any){
+  debugger
+  this.num=ev.target.value;
+}
+Search(){
+  debugger
+  
+  this.user.srarchByid(this.num);
 }
 }

@@ -38,15 +38,14 @@
                                 <div class="form-group">
                                     <mat-form-field >
                                     <span class="form-label"> First dose</span>
-                                    <input class="form-control" type="date" matInput formControlName="actualdatedose1" >
-                                </mat-form-field>
+                                    <input class="form-control" type="date" (change)="changeDate($event,1)" matInput formControlName="actualdatedose1" >                                </mat-form-field>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <mat-form-field >
                                     <span class="form-label"> Second dose</span>
-                                    <input class="form-control" type="date" matInput formControlName="actualdatedose2" >
+                                    <input class="form-control" type="date" (change)="changeDate($event,2)" matInput formControlName="actualdatedose2" >
                                 </mat-form-field>
                                 </div>
                             </div>

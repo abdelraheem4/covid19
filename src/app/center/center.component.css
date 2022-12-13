@@ -4,6 +4,9 @@
     height: 400px;
     width: 80%;
     margin: 150px;
+    border-width:2px;
+border-style:solid;
+border-color:black;
    }
    .payment{
     justify-content: center;

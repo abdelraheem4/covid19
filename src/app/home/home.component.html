@@ -1,4 +1,4 @@
-<div class="header_section">
+<!-- <div class="header_section" >
    <div class="container-fluid">
          <div class="main">
             <div class="logo"><a href="index.html"><img src="assets/home/images/logo.png"></a></div>
@@ -8,25 +8,29 @@
                      <div >
                         <ul>
                            <div>
-                              <ul [ngClass]="'navv'" style="display:inline-flex;margin-left: 750px;">
+                              <ul [ngClass]="'navv'" style="position: relative;bottom: 10px ; display:inline-flex; margin-left: 750px;">
                                  <li><a routerLink="/">Home</a></li>
                                    <li><a routerLink="/protect">Protect</a></li>
                                       <li><a routerLink="/about">About</a></li>
-                                         <li><a href="doctors.html">Doctors</a></li>
                                             <li><a routerLink="/symptoms">Symptoms</a></li>
                                             <li><a href="/centers">Centers</a></li>
 
                                            
                                              <li><a routerLink="/security/login">Login</a></li>
-
-                                 <!-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
-                              </ul>
+  </ul>
                            </div>
-                           <!-- <li><a href="#">Login</a></li>
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
                         </ul>
                      </div>
-                  </div>
+                  </div> 
+                </ul>
+            </div>
+         </div>
+      </div> -->
+                                 <!-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
+                            
+                           <!-- <li><a href="#">Login</a></li>
+                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
+                        
                   <!-- <div id="myNav" class="overlay">
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                       <div class="overlay-content">
@@ -38,15 +42,12 @@
 
                      </div>
                   </div> -->
-                  <span class="navbar-toggler-icon"></span>
+                  <!-- <span class="navbar-toggler-icon"></span>
                   <span onclick="openNav()"><img src="assets/home/images/toogle-icon.png" class="toggle_menu"></span>
-                  <span onclick="openNav()"><img src="assets/home/images/toogle-icon1.png" class="toggle_menu_1"></span>
-               </ul>
-            </div>
-         </div>
-      </div>
+                  <span onclick="openNav()"><img src="assets/home/images/toogle-icon1.png" class="toggle_menu_1"></span> -->
+             
 <!-- banner section start -->
-<div class="banner_section layout_padding">
+<!-- <div class="banner_section layout_padding">
    <div class="container">
       <div id="my_slider" class="carousel slide" data-ride="carousel">
          <div class="carousel-inner">
@@ -102,8 +103,7 @@
       </div>
    </div>            
 </div>
-<!-- banner section end -->
-</div>
+</div> -->
 
 <!-- header section end -->
 <!-- protect section start -->
@@ -111,22 +111,30 @@
 
 <!-- protect section end -->
 <!-- about section start -->
-<div class="about_section layout_padding">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-6">
-            <div class="about_img"><img src="assets/home/images/img-1.png"></div>
-         </div>
-         <div class="col-md-6">
-            <h1 class="about_taital">Coronavirus what it is?</h1>
-            <p class="about_text">when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
-            <div class="read_bt"><a href="#">Read More</a></div>
-         </div>
-      </div>
+<app-header></app-header>
+<div class="hero-v1">
+
+   <div class="container" *ngFor="let obj of home.allHome">
+       <div class="row align-items-center">
+       <div class="col-lg-6 mr-auto text-center text-lg-left">
+           <span class="d-block subheading">{{obj.littletitle1}}</span>
+           <h1 class="heading mb-3">{{obj.title1}}</h1>
+           <p class="mb-5">{{obj.descriptiontitle1}}</p>
+           <p class="mb-4"><a  class="btn btn-primary" >{{obj.textbutton}}</a></p>
+
+
+
+       </div>
+       <div class="col-lg-6">
+           <figure class="illustration">
+           <img src="./assets/images/illustration.png" alt="Image" class="img-fluid">
+           </figure>
+       </div>
+       <div class="col-lg-6"></div>
+       </div>
    </div>
-</div>
-<br><br><br><br><br><br><br><br>  
-<div class="site-section stats" style="margin-left: 250px; margin-top: 150px;" *ngFor="let obj of home.allHome">
+   </div>
+<div class="site-section stats" *ngFor="let obj of home.allHome">
    <div class="container">
        <div class="row mb-3">
        <div class="col-lg-7 text-center mx-auto">
@@ -165,6 +173,21 @@
        </div>
    </div>
    </div>
+<div class="about_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="about_img"><img src="assets/home/images/img-1.png"></div>
+         </div>
+         <div class="col-md-6">
+            <h1 class="about_taital">Coronavirus what it is?</h1>
+            <p class="about_text">when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+            <div class="read_bt"><a href="#">Read More</a></div>
+         </div>
+      </div>
+   </div>
+</div>
+<br><br><br><br><br><br><br><br>  
 <!-- about section end -->
 <!-- doctor section start -->
 <!-- <div class="doctors_section layout_padding">
@@ -187,7 +210,7 @@
 </div> -->
 <!-- doctor section end -->
 <!-- news section start -->
-<div class="news_section layout_padding">
+<!-- <div class="news_section layout_padding">
    <div class="container">
       <div id="main_slider" class="carousel slide" data-ride="carousel">
          <div class="carousel-inner">
@@ -205,7 +228,7 @@
             </div>
             <div class="carousel-item">
               <h1 class="news_taital">Latest News</h1>
-               <p class="news_text">when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+               <p >when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
                <div class="news_section_2 layout_padding">
                   <div class="box_main">
                      <div class="image_1"><img src="assets/home/images/news-img.png"></div>
@@ -236,7 +259,7 @@
          </a>
       </div>
       </div>
-   </div>
+   </div> -->
 <!-- news section end -->
 <!-- update section start -->
 <div class="site-section" *ngFor="let obj of home.allHome">
