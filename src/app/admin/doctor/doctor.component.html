@@ -31,6 +31,8 @@
         <th scope="col">Age</th>
         <th scope="col">Role ID</th>
         <th scope="col">Image</th>
+        <th scope="col">update</th>
+        <th scope="col">delete</th>
 
 
 
@@ -50,8 +52,8 @@
         <td>{{obj.roleid}}</td>
         <td><img src="../../../assets/images/{{obj.image}}" width="100" height="100">
         </td>
-      <td>  <button (click)="openUpdateDailog(obj)"  class="table-active">Update</button>
-        <button (click)="openDeleteDailog(obj.userid)"  class="table-active">Delete</button> </td>
+      <td>  <button (click)="openUpdateDailog(obj)"  class="table-active">Update</button></td>
+      <td>  <button (click)="openDeleteDailog(obj.userid)"  class="table-active">Delete</button> </td>
       </tr>
     </tbody>
   </table>
@@ -164,7 +166,7 @@
 <ng-template #callDeleteDailog>
 
     <h2> Are you want to delete this item ?</h2>
-    <button mat-dialog-close="yes">Yss</button>
+    <button mat-dialog-close="yes">Yss</button>||
     <button mat-dialog-close="no" >NO</button>
     
       </ng-template>

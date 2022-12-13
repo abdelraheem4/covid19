@@ -13,6 +13,8 @@ import { ReservationService } from 'src/app/Services/reservation.service';
 })
 
 export class ReservationComponent implements OnInit {
+  actualdatedose1 : Date = null;
+  actualdatedose2 : Date = null;
   createForm:FormGroup = new FormGroup ({
     actualdatedose1:new FormControl('',Validators.required),
     actualdatedose2:new FormControl('',Validators.required),
@@ -34,10 +36,20 @@ export class ReservationComponent implements OnInit {
   }
   Status:any ='under process'
   saveCREATEData(){
+    this.createForm.controls['actualdatedose1'].setValue(this.actualdatedose1);
+    this.createForm.controls['actualdatedose2'].setValue(this.actualdatedose2);
+
     this.createForm.controls['userid'].setValue(this.id)
     this.createForm.controls['status'].setValue(this.Status)
     debugger
     this.reservation.createreservation(this.createForm.value);
   
+  }
+
+  changeDate(event:any , index:number){
+    switch(index){
+     case 1 : this.actualdatedose1 = event.target.value; break;
+     case 2: this.actualdatedose2 = event.target.value;
+    }
   }
 }
